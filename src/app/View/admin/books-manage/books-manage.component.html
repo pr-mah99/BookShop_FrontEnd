@@ -1,0 +1,47 @@
+
+  <!-- ------------- -->
+
+<div class="formcontainer">
+    <p>Books Management - أدارة الكتب</p>    <hr>   
+    <input type="text" [(ngModel)]="bookService.searchTerm" (input)="bookService.getBooks(0)" placeholder="ابحث عن الكتب...">
+
+    <div class="form-container">
+        <button (click)="openAddBookDialog()">أضافة كتاب جديد</button>
+        </div>
+        <br>
+        <div class="loading-container-small" *ngIf="bookService.loading; else dataContent">
+            <!-- عرض Progress Spinner في المنتصف أثناء التحميل -->
+            <mat-progress-spinner
+              mode="indeterminate"
+              diameter="50"
+            ></mat-progress-spinner>
+            <p>جارٍ التحميل...</p>
+          </div>
+          
+        <ng-template #dataContent> 
+    <!-- Display Books -->    
+    <p *ngIf="bookService.data.length===0">لايوجد بيانات</p>
+    <div class="book-container" *ngIf="!bookService.loading">
+      <div *ngFor="let book of bookService.data">
+        <p>العنوان: {{ book.title }}</p>
+        <p>المؤلف: {{ book.author }}</p>
+        <p>النوع: {{ book.genre }}</p>
+        <p>السعر: {{ book.price }}</p>       
+        <p>التوفر: 
+            <mat-icon color="{{book.availability? 'primary' : 'warn'}}">{{ book.availability ? 'check_circle' : 'cancel' }}</mat-icon>
+          </p>
+          
+        <button (click)="openEditBookDialog(book)">تعديل</button>
+        <button (click)="openDeleteBookDialog(book.bookId!)">حذف</button>
+      </div>
+    </div>
+  
+    <!-- Pagination Buttons -->
+    <div class="pagination" *ngIf="bookService.paginationData">
+      <button *ngIf="bookService.paginationData.current_page > 1" (click)="bookService.getBooks(bookService.paginationData.current_page - 1)">السابق</button>
+      <button *ngFor="let page of getPages()" [class.active]="page === bookService.paginationData.current_page" (click)="bookService.getBooks(page)">{{ page }}</button>
+      <button *ngIf="bookService.paginationData.current_page < bookService.paginationData.last_page" (click)="bookService.getBooks(bookService.paginationData.current_page + 1)">التالي</button>
+    </div>
+</ng-template>
+  
+  </div>

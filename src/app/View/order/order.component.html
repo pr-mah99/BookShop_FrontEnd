@@ -1,0 +1,53 @@
+<div class="order-container">
+  <button class="close-btn" mat-icon-button mat-dialog-close aria-label="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+  
+  <div class="order-summary">
+    <button mat-button class="remove-btn" *ngIf="orderService.orders.length>1" (click)="orderService.removeAllOrders()">حذف الكل</button>
+    <p class="order-count">قائمة الطلبات: {{ orderService.orders.length }}</p>
+   
+  </div>
+  <ul>
+
+    <div mat-dialog-content>
+
+      <!-- <p>{{orderService.orders|json}}</p> -->
+      <!-- <p>{{orderService.orders.ItemPhoto}}</p> -->
+      
+    <div *ngIf="orderService.orders.length === 0">
+      <p>لا توجد طلبات حاليًا.</p>
+    </div>
+
+      <ul>    
+        <li *ngFor="let data of orderService.orders; let i = index">
+           <div class="order-item">
+            <p>{{i+1}}</p>
+            <img class="order-item-img" src="../../../assets/images/icon.png" loading="lazy">
+            <div class="order-item-details">
+              <p class="order-item-title">{{ data.title }}</p>
+              <p class="order-item-subtitle">المؤلف: {{ data.author }}</p>
+              <p class="order-item-subtitle">النوع: {{ data.genre }}</p>
+              <p class="order-item-subtitle">الكمية: {{ data.quantity }}</p>
+              <p class="order-item-subtitle">السعر: {{ data.price | number }} $</p>    
+                          
+            </div>      
+            <button class="remove-btn" (click)="orderService.removeOrderAtIndex(i)">حذف</button>      
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </ul>
+
+  <br>
+  <div class="row">
+    <p class="total-price">الإجمالي: {{ orderService.total | number }} $</p>
+  
+  <button class="btn" color="primary" mat-raised-button *ngIf="orderService.orders.length!=0 && this.loginService.loginState && this.loginService.userData?.type=='user'" (click)="orderService.SaveOrder()">تأكيد✔️ وارسال الطلب</button>      
+  <p *ngIf="!this.loginService.loginState || this.loginService.userData?.type!='user'">يرجى تسجيل الدخول لارسال الطلب</p>
+  <br>
+  </div>
+
+</div>
+

@@ -1,0 +1,37 @@
+/* مركزة العناصر بشكل عمودي وأفقي */
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* ارتفاع يشغل الشاشة بالكامل */
+  }
+.loading-container p{
+    margin: 12px;
+}
+//   وجعلة في منتصف الصفحة
+
+
+.loading-container-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* ارتفاع يشغل الشاشة بالكامل */
+}
+.loading-container-small p{
+  margin: 12px;
+}
+
+@media screen and (max-width: 700px) {
+  .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* ارتفاع يشغل الشاشة بالكامل */
+  }
+  .loading-container-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35vh; /* ارتفاع يشغل الشاشة بالكامل */
+  }
+}

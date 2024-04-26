@@ -1,0 +1,25 @@
+/* Import the fonts using @font-face */
+@font-face {
+  font-family: "Tajawal";
+  src: url("/assets/fonts/Tajawal/Tajawal-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tajawal";
+  src: url("/assets/fonts/Tajawal/Tajawal-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tajawal";
+  src: url("/assets/fonts/Tajawal/Tajawal-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Tajawal";
+  src: url("/assets/fonts/Tajawal/Tajawal-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+/* Import the fonts using @font-face - End *//*# sourceMappingURL=fontStyle.css.map */

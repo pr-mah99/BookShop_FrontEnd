@@ -1,0 +1,88 @@
+img {
+  width: 50px;
+  // -webkit-mask-image: none;
+  // mask-image: none;
+  // background: none;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.toggle {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+  .toggle {
+    display: block;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}
+
+mat-toolbar {
+  height: 50px;
+
+  // background-color: #445760;
+  // background-image: linear-gradient(to right top, #51798d, #4b6f81, #466676, #405c6a, #3b535f);
+  // background-image: linear-gradient(to left bottom, #2d1f27, #2e222d, #2e2632, #2e2a37, #2d2e3c, #2b313f, #2a3542, #283844, #273c45, #273f45, #294245, #2d4544);
+  &-button {
+    // color: white;
+  }
+}
+
+/* toolbar.component.scss */
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* ... باقي الأنماط ... */
+
+// dark-mode
+
+.toggle-label {
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: #d9d9d9;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.toggle-label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+input:checked ~ label:after{
+  left: 55px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg,#777,#3a3a3a);
+}
+input:checked ~ label{
+  background: #242424;
+}
+input{
+  display: none;
+}
+
+// dark-mode End
+
+router-outlet{
+  display: none;
+}

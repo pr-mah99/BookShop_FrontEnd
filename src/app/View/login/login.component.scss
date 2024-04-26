@@ -1,0 +1,71 @@
+/* login.component.scss */
+
+html,body{
+  height: 100%;
+}
+
+p{
+    text-align: center;
+}
+.login-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 0 10px;
+      color: #5555559f;
+      transition: color 0.3s ease;
+      
+      &.active {
+        color: #007bff;
+      }
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  

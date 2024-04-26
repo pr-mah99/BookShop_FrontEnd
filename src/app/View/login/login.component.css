@@ -1,0 +1,65 @@
+/* login.component.scss */
+html, body {
+  height: 100%;
+}
+
+p {
+  text-align: center;
+}
+
+.login-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.toggle-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 0 10px;
+  color: rgba(85, 85, 85, 0.6235294118);
+  transition: color 0.3s ease;
+}
+.toggle-buttons button.active {
+  color: #007bff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+}
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group input[type=password] {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type=submit] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button[type=submit]:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=login.component.css.map */

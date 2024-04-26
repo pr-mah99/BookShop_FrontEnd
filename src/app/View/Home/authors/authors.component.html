@@ -1,0 +1,25 @@
+
+<br>
+<p>قائمة المؤلفين</p>
+<hr>
+
+<div class="loading-container" *ngIf="loading; else dataContent">
+    <!-- عرض Progress Spinner في المنتصف أثناء التحميل -->
+    <mat-progress-spinner
+      mode="indeterminate"
+      diameter="50"
+    ></mat-progress-spinner>
+    <p>جارٍ التحميل...</p>
+  </div>
+  
+  <!-- ------------- -->
+  <ng-template #dataContent>
+
+
+<div class="authors-container">
+    <div *ngFor="let author of data" class="author-card">
+      <p><strong>المؤلف:</strong> {{ author.author }}</p>
+      <p><strong>عدد الكتب:</strong> {{ author.book_count }}</p>
+    </div>
+  </div>
+</ng-template>

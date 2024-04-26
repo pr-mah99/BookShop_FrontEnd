@@ -1,0 +1,30 @@
+<div class="formcontainer">
+    
+    <p>تعديل بيانات الكتاب</p><hr>
+    <form (ngSubmit)="onSubmit()" class="form-container">
+      <div class="form-group">
+        <label for="title">عنوان الكتاب:</label>
+        <input type="text" id="title" name="title" [(ngModel)]="book.title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="author">اسم المؤلف:</label>
+        <input type="text" id="author" name="author" [(ngModel)]="book.author" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="genre">النوع:</label>
+        <input type="text" id="genre" name="genre" [(ngModel)]="book.genre" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="price">السعر:</label>
+        <input type="number" id="price" name="price" [(ngModel)]="book.price" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="availability" [(ngModel)]="book.availability"> <span>حالة التوفر</span>
+        </label>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+      <button type="button" class="btn btn-secondary" (click)="closeWindow()">إلغاء</button>
+    </form>
+  </div>

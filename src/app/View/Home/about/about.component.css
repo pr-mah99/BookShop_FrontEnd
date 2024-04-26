@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.card-header {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.card-content {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}/*# sourceMappingURL=about.component.css.map */

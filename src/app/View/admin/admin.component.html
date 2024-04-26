@@ -1,0 +1,14 @@
+<mat-card>
+    <p>لوحة التحكم - مدير الموقع</p></mat-card>
+<mat-card>
+  <!-- تحسين: علامة تبويب داخل نفس الصفحة -->
+  <mat-tab-group>
+    <mat-tab label="أدارة الكتب">
+      <app-books-manage></app-books-manage>
+    </mat-tab>
+
+    <mat-tab label="الطلبات">
+      <app-orders-manage></app-orders-manage>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

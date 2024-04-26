@@ -1,0 +1,50 @@
+<div class="loading-container" *ngIf="loading; else dataContent">
+    <!-- عرض Progress Spinner في المنتصف أثناء التحميل -->
+    <mat-progress-spinner
+      mode="indeterminate"
+      diameter="50"
+    ></mat-progress-spinner>
+    <p>جارٍ التحميل...</p>
+  </div>
+  
+  <!-- ------------- -->
+  <ng-template #dataContent>
+<div class="formcontainer">
+    <p>Orders - عرض الطلبات</p>    <hr>  
+        <br>
+    <!-- Display Orders -->    
+<div class="book-container">
+    <mat-card *ngFor="let order of data" class="order-card">
+      <mat-card-header>
+        <mat-card-title>الطلب رقم: {{ order.order_id }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>العميل:</strong> {{ order.user_id }}</p>
+        <p><strong>نوع الطلب:</strong> {{ order.orderType }}</p>
+        <p><strong>العناصر:</strong></p>
+        <hr>
+        <ul>
+          <li *ngFor="let item of order.items">
+            {{ item.quantity }} x {{ item.title }} - {{ item.price }}$
+          </li>
+        </ul>
+        <hr>
+        <p><strong>الموقع:</strong> {{ order.location }}</p>
+        <p><strong>الدفع:</strong> {{ order.payment }}</p>
+        <p><strong>الملاحظات:</strong> {{ order.customerNotes }}</p>
+        <p><strong>الإجمالي:</strong> {{ order.total }}$</p>
+        <p><strong>حالة الطلب:</strong> {{ order.state ? 'مكتمل' : 'غير مكتمل' }}</p>
+      </mat-card-content>
+      <hr style="margin-left: 0px;margin-right: 0px;">
+    </mat-card>
+  
+  
+  </div>
+      <!-- Pagination Buttons -->
+      <div class="pagination" *ngIf="paginationData">
+        <button *ngIf="paginationData.current_page > 1" (click)="getOrders(paginationData.current_page - 1)">السابق</button>
+        <button *ngFor="let page of getPages()" [class.active]="page === paginationData.current_page" (click)="getOrders(page)">{{ page }}</button>
+        <button *ngIf="paginationData.current_page < paginationData.last_page" (click)="getOrders(paginationData.current_page + 1)">التالي</button>
+      </div>
+</div>
+</ng-template>

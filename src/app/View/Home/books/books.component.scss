@@ -1,0 +1,55 @@
+.book-container {
+    display: flex;
+    flex-wrap: wrap; /* هنا تسمح للعناصر بالانتقال إلى السطر التالي عند الحاجة */
+  }
+  
+  .book-item {
+    width: 100%;
+    max-width: 400px; /* يمكنك تحديد العرض الأقصى لكل عنصر هنا */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+// -------------
+.filters {
+  display: flex;
+  flex-direction: row;
+
+  input {
+    margin-bottom: 8px;
+    margin-right: 20px;  
+  }
+}
+
+// -------------
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-controls button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .quantity-controls span {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  // ---
+  .card-title{
+    font-family: 'tajawal';
+    font-weight: 600;
+  }
+
+  p{
+    text-align: center;
+  }
+  // ----------

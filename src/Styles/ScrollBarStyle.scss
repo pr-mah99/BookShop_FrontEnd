@@ -1,0 +1,32 @@
+
+/* width */
+::-webkit-scrollbar {
+    // width: 8px;
+    height: 8px;
+    // background-color: #b1cad5;
+    width: 6px;
+    overflow-y: scroll;
+    background: #b1cad5;
+    box-shadow: inset 0 0 4px #707070;
+  }
+  ::-webkit-scrollbar:hover {
+    // width: 12px;
+  }
+
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(246, 231, 231); 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  #68b0a3; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #579bb8; 
+    // width: 12px;
+  }

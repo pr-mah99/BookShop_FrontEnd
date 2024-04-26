@@ -1,0 +1,37 @@
+// mat-toolbar {
+//   height: 50px;
+//   // background-color: #445760;
+//  // background-image: linear-gradient(to right top, #51798d, #4b6f81, #466676, #405c6a, #3b535f);
+// //  background-image: linear-gradient(to left bottom, #2d1f27, #2e222d, #2e2632, #2e2a37, #2d2e3c, #2b313f, #2a3542, #283844, #273c45, #273f45, #294245, #2d4544);
+
+// }
+
+/* قم بتعيين الشفافية الافتراضية للزر */
+.back-to-top-button {
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  border: none;
+  // ------
+  background-color: rgb(209, 45, 86);
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0.5;
+  transition: 0.6s;
+}
+// --------
+
+.back-to-top-button:hover {
+  opacity: 0.7;       
+  font-weight:300;
+  background-color: blueviolet;
+  border-radius: 33px;
+}
+
+.back-to-top-button:active {
+  background-color: teal;
+  border-radius: 8px;
+}
+

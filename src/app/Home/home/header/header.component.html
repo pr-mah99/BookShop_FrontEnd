@@ -1,0 +1,148 @@
+<!-- <p>header works!</p> -->
+
+<!-- toolbar.component.html -->
+
+<!-- src/app/toolbar/toolbar.component.html -->
+
+<!-- src/app/sidenav/sidenav.component.html -->
+
+<!-- src/app/toolbar/toolbar.component.html -->
+
+<!-- ------------ -->
+<div class="c" *ngIf="showHeader">
+<mat-toolbar color="primary">
+  <button class="toggle"
+    (click)="drawer.toggle()"
+    mat-icon-button
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <img routerLink="/home" class="poster" src="../../../assets/images/icon.png" alt="" loading="lazy">
+  <span class="title" routerLink="/home">Book Store - متجر الكتب</span>
+ 
+  <span class="spacer"></span>
+
+  <div *ngIf="sidenav.mode != 'over'">
+    <button routerLink="/home" mat-button>الصفحة الرئيسية</button>
+    <button routerLink="/books" mat-button>الكتب</button>
+
+    <button routerLink="/authors" mat-button>المؤلفين</button>
+    <button routerLink="/about" mat-button>حول الموقع</button>    
+    <button *ngIf="loginService.userData?.type==='admin' && loginService.loginState" routerLink="/admin" mat-button>لوحة التحكم</button>    
+
+    <button mat-button>
+      <input type="checkbox" id="dark-mode" (change)="toggleTheme()" [checked]="isAlternativeTheme">
+      <label for="dark-mode" class="toggle-label"></label>
+    </button>
+
+
+    <!-- --------- -->
+
+  </div> 
+
+
+
+  <!-- Add login/logout button based on user authentication -->
+  <!-- <button mat-icon-button [routerLink]="['/login']" *ngIf="!isLoggedIn">
+    <mat-icon>person</mat-icon>
+    <span>login</span>
+  </button>
+
+  <button mat-icon-button [routerLink]="['/profile']" *ngIf="isLoggedIn">
+    <mat-icon>person</mat-icon>
+    <span>{{ fullName }}</span>
+  </button> -->
+
+  <!-- <form class="form-inline search">
+    <mat-form-field>
+      <input matInput placeholder="ادخل اسم المينو هنا" name="txtsearch" />
+      <button mat-button name="search_btn" id="search_btn" type="button">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </form> -->
+
+  <!-- href="https://play.google.com/store/apps/details?id=com.luca.BookStore" -->
+  <a   
+    routerLink="/login"
+    mat-raised-button
+    color="accent"
+    >تسجيل الدخول</a
+  >
+
+</mat-toolbar>
+
+
+<mat-drawer-container autosize >
+  <mat-drawer  #drawer opened="false" mode="over" position="start">
+    <mat-nav-list>
+      <mat-list-item routerLink="/home">
+        <button mat-button><mat-icon>home</mat-icon> الصفحة الرئيسية</button>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/books">
+        <button mat-button>
+          <mat-icon>explore</mat-icon>  الكتب
+        </button>
+      </mat-list-item>
+      
+  
+
+
+      <mat-list-item routerLink="/authors">
+        <button mat-button>
+          <mat-icon>wallpaper</mat-icon> المؤلفين
+        </button>
+      </mat-list-item>
+
+
+      <mat-list-item routerLink="/about">
+        <button mat-button><mat-icon>info</mat-icon> حول الموقع</button>
+      </mat-list-item>
+      
+      <mat-list-item routerLink="/admin" *ngIf="loginService.userData?.type==='admin' && loginService.loginState">
+        <button mat-button><mat-icon>info</mat-icon> لوحة التحكم</button>
+      </mat-list-item>
+      
+      
+      <mat-list-item>
+        <button mat-button>
+          <input type="checkbox" id="dark-mode" (change)="toggleTheme()" [checked]="isAlternativeTheme">
+          <label for="dark-mode" class="toggle-label"></label>        
+        </button>        
+      </mat-list-item>
+
+
+
+ <mat-list-item routerLink="/login">
+        <button mat-button>
+          <mat-icon>smartphone</mat-icon> تسجيل الدخول
+        </button>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <div style="text-align: center; min-height: 600px">
+      <div [@routeAnimation]="getDepth(myOutlet)">
+        <router-outlet #myOutlet="outlet"></router-outlet>
+    </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+</div>
+
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- ------------------ -->
+
+<mat-sidenav #sidenav="matSidenav"> </mat-sidenav>
+<!-- </div> -->
+
+<div style="text-align: center; min-height: 600px" *ngIf="!showHeader">
+  <div [@routeAnimation]="getDepth(myOutlet)">
+    <router-outlet #myOutlet="outlet"></router-outlet>
+</div>
+</div>

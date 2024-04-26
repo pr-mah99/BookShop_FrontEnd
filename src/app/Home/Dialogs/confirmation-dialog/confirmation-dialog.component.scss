@@ -1,0 +1,43 @@
+.dialog-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dialog-title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .dialog-message {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-confirm,
+  .btn-cancel {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-confirm {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-cancel {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
